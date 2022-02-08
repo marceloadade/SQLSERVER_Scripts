@@ -7,4 +7,4 @@ on d.database_id = rs.database_id
 left join sys.dm_hadr_name_id_map im on im.ag_id=rs.group_id
 where d.database_id > 4
 order by d.compatibility_level
---add who is primary
+
