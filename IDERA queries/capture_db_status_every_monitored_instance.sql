@@ -30,7 +30,7 @@ WHILE @@FETCH_STATUS = 0
       BEGIN
 
       set @SQL = N'select a.sname,a.name, state_desc
-      from openrowset(''SQLNCLI'',''Server='@server_name''+';Trusted_Connection=yes;'',
+      from openrowset(''SQLNCLI'',''Server='+@server_name+''+';Trusted_Connection=yes;'',
       ''select @@servername as sname,name, state_desc from sys.databases;''
       ) as a;'
       print @sql
