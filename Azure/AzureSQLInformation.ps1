@@ -1,0 +1,1 @@
+Get-AzureRMResource |Where-Object -FilterScript {$_.ResourceType -EQ 'Microsoft.Sql/servers'} | foreach-Object {Get-AzSQLDatabase -Servername $_.Name -ResourceGroupName $_.ResourceGroupName } |Export-csv -Path .\results.csv
